@@ -1,6 +1,6 @@
+
 import { AnimatedText } from "@/components/AnimatedText";
 import { Button } from "@/components/ui/button";
-import { WhatsAppChatButton } from "@/components/WhatsAppChatButton";
 import { DirectChatBox } from "@/components/DirectChatBox";
 
 export default function Contact() {
@@ -202,9 +202,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
-      {/* Floating WhatsApp Button */}
-      <WhatsAppChatButton />
     </>
   );
 }
