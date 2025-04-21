@@ -1,4 +1,3 @@
-
 import { AnimatedText } from "@/components/AnimatedText";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -10,7 +9,7 @@ export default function Home() {
       <section className="min-h-screen pt-28 pb-12 md:pt-40 md:pb-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 -z-10"></div>
         <div className="absolute inset-0 opacity-30 dark:opacity-10 -z-10">
-          <div className="absolute inset-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%239C92AC" fill-opacity="0.4" fill-rule="evenodd"%3E%3Ccircle cx="3" cy="3" r="1"/%3E%3C/g%3E%3C/svg%3E")', backgroundSize: '20px 20px' }}></div>
+          <div className="absolute inset-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=20 height=20 viewBox=0 0 20 20 xmlns=http://www.w3.org/2000/svg%3E%3Cg fill=%239C92AC fill-opacity=0.4 fill-rule=evenodd%3E%3Ccircle cx=3 cy=3 r=1/%3E%3C/g%3E%3C/svg%3E")', backgroundSize: '20px 20px' }}></div>
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 relative">
@@ -41,7 +40,7 @@ export default function Home() {
             
             <div className="relative animate-slide-in-right">
               <img
-                src="/lovable-uploads/91366b1e-77fe-4d56-8f4d-2cebd68fd9af.png"
+                src="/lovable-uploads/ee58312e-1aa5-4ff1-8078-eb7f09290c75.png"
                 alt="Webiify Logo"
                 className="w-full max-w-md mx-auto lg:max-w-full animate-pulse"
               />
@@ -125,7 +124,7 @@ export default function Home() {
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-webiify-purple to-webiify-blue opacity-90 -z-10"></div>
         <div className="absolute inset-0 opacity-10 -z-10">
-          <div className="absolute inset-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23FFF" fill-opacity="0.4" fill-rule="evenodd"%3E%3Ccircle cx="3" cy="3" r="1"/%3E%3C/g%3E%3C/svg%3E")', backgroundSize: '20px 20px' }}></div>
+          <div className="absolute inset-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=20 height=20 viewBox=0 0 20 20 xmlns=http://www.w3.org/2000/svg%3E%3Cg fill=%23FFF fill-opacity=0.4 fill-rule=evenodd%3E%3Ccircle cx=3 cy=3 r=1/%3E%3C/g%3E%3C/svg%3E")', backgroundSize: '20px 20px' }}></div>
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 text-center">
