@@ -37,7 +37,7 @@ export function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3",
         isScrolled
-          ? "bg-webiify-blue/95 shadow-md py-2 backdrop-blur-sm"
+          ? "bg-gradient-to-r from-[#1c2533] via-[#1f3447] to-[#3c5a87] shadow-md py-2 backdrop-blur-sm"
           : "bg-transparent"
       )}
     >
@@ -45,10 +45,10 @@ export function Header() {
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="/lovable-uploads/63a6bfc1-979a-4da2-bd8e-dd15bbf738da.png" 
+              src="/lovable-uploads/b9b7d557-456c-45f5-aa1c-ffd0b29975bd.png" 
               alt="Webiify Logo" 
               className="h-10 sm:h-12"
-              style={{ filter: isScrolled ? "drop-shadow(0 0 3px rgba(0,0,0,0.3))" : "none" }}
+              style={{ filter: isScrolled ? "drop-shadow(0 0 10px rgba(50,150,255,0.9))" : "none" }}
             />
           </Link>
 
@@ -111,7 +111,7 @@ export function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-webiify-blue/95 mt-3 py-4 px-4 rounded-lg animate-fade-in backdrop-blur-sm shadow-lg">
+          <div className="md:hidden bg-gradient-to-r from-[#1c2533] via-[#1f3447] to-[#3c5a87] mt-3 py-4 px-4 rounded-lg animate-fade-in backdrop-blur-sm shadow-lg">
             <nav className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <Link
