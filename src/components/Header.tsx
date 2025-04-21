@@ -37,7 +37,7 @@ export function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3",
         isScrolled
-          ? "glass-bg shadow-md py-2"
+          ? "bg-webiify-blue/95 shadow-md py-2 backdrop-blur-sm"
           : "bg-transparent"
       )}
     >
@@ -45,9 +45,10 @@ export function Header() {
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="/lovable-uploads/c10786c9-e57c-4952-b35a-3badbe0a6159.png" 
+              src="/lovable-uploads/63a6bfc1-979a-4da2-bd8e-dd15bbf738da.png" 
               alt="Webiify Logo" 
-              className="h-10 sm:h-12" 
+              className="h-10 sm:h-12"
+              style={{ filter: isScrolled ? "drop-shadow(0 0 3px rgba(0,0,0,0.3))" : "none" }}
             />
           </Link>
 
@@ -58,17 +59,17 @@ export function Header() {
                 key={link.path}
                 to={link.path}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary",
+                  "text-sm font-medium transition-colors hover:text-webiify-teal",
                   location.pathname === link.path
-                    ? "text-primary"
-                    : "text-foreground/70"
+                    ? "text-webiify-teal font-semibold"
+                    : "text-white/90"
                 )}
               >
                 {link.name}
               </Link>
             ))}
             <ThemeToggle />
-            <Button variant="default" size="sm" className="ml-4 bg-gradient-to-r from-webiify-blue to-webiify-purple text-white">
+            <Button variant="default" size="sm" className="ml-4 bg-gradient-to-r from-webiify-teal to-webiify-green text-white">
               Get Started
             </Button>
           </nav>
@@ -78,7 +79,8 @@ export function Header() {
             <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-foreground p-2"
+              className="text-white p-2"
+              aria-label="Toggle menu"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +111,7 @@ export function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden glass-bg mt-3 py-4 px-4 rounded-lg animate-fade-in">
+          <div className="md:hidden bg-webiify-blue/95 mt-3 py-4 px-4 rounded-lg animate-fade-in backdrop-blur-sm shadow-lg">
             <nav className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <Link
@@ -119,14 +121,14 @@ export function Header() {
                   className={cn(
                     "text-sm font-medium transition-colors px-4 py-2 rounded-md",
                     location.pathname === link.path
-                      ? "bg-primary/10 text-primary"
-                      : "text-foreground/70 hover:bg-accent/10"
+                      ? "bg-webiify-teal/20 text-webiify-teal font-semibold"
+                      : "text-white/90 hover:bg-webiify-teal/10"
                   )}
                 >
                   {link.name}
                 </Link>
               ))}
-              <Button variant="default" className="mt-2 bg-gradient-to-r from-webiify-blue to-webiify-purple text-white">
+              <Button variant="default" className="mt-2 bg-gradient-to-r from-webiify-teal to-webiify-green text-white">
                 Get Started
               </Button>
             </nav>

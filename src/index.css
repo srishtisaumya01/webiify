@@ -116,7 +116,7 @@
   }
   
   .glass-bg {
-    @apply bg-white/10 backdrop-blur-md border border-white/20 dark:bg-black/30 dark:border-white/10;
+    @apply bg-webiify-blue/90 backdrop-blur-md border border-webiify-blue/60 dark:bg-webiify-blue/80 dark:border-webiify-blue/50;
   }
 }
 
