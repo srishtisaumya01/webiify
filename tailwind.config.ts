@@ -52,6 +52,15 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				webiify: {
+					blue: '#1E88E5',
+					purple: '#9b87f5',
+					'deep-blue': '#0D47A1',
+					'light-blue': '#33C3F0',
+					teal: '#26A69A',
+					green: '#4CAF50',
+					'light-green': '#8BC34A',
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
