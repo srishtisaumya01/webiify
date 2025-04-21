@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Whatsapp } from "lucide-react";
+import { Whatsapp } from "lucide-react"; // Use correct icon import from lucide-react
 
 const WHATSAPP_PHONE = "+15551234567"; // Replace with your real WhatsApp business number.
 
