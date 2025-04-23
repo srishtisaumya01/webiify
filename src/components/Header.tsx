@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ThemeToggle } from "./ThemeToggle";
@@ -38,8 +37,10 @@ export function Header() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3",
         isScrolled
           ? "bg-gradient-to-r from-[#1c2533] via-[#1f3447] to-[#3c5a87] shadow-md py-2 backdrop-blur-sm"
-          : "bg-white/80 dark:bg-transparent backdrop-blur-md dark:backdrop-blur-sm", // Updated light mode background
-        isScrolled ? "text-white" : "text-gray-800 dark:text-white" // Added text color for light mode
+          : "bg-white/80 dark:bg-transparent backdrop-blur-md dark:backdrop-blur-sm",
+        isScrolled
+          ? "text-white"
+          : "text-gray-900 dark:text-white"
       )}
     >
       <div className="container max-w-7xl mx-auto px-4 sm:px-6">
@@ -53,7 +54,6 @@ export function Header() {
             />
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
@@ -63,24 +63,35 @@ export function Header() {
                   "text-sm font-medium transition-colors hover:text-webiify-teal",
                   location.pathname === link.path
                     ? "text-webiify-teal font-semibold"
-                    : "text-gray-700 dark:text-white/90"
+                    : "text-gray-900 dark:text-white/90"
                 )}
               >
                 {link.name}
               </Link>
             ))}
             <ThemeToggle />
-            <Button variant="default" size="sm" className="ml-4 bg-gradient-to-r from-webiify-teal to-webiify-green text-white">
+            <Button
+              variant="default"
+              size="sm"
+              className={cn(
+                "ml-4 bg-gradient-to-r from-webiify-teal to-webiify-green text-white",
+                !isScrolled && "border border-gray-300"
+              )}
+            >
               Get Started
             </Button>
           </nav>
 
-          {/* Mobile Menu Toggle */}
           <div className="flex items-center space-x-4 md:hidden">
             <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-800 dark:text-white p-2"
+              className={cn(
+                "p-2",
+                isScrolled
+                  ? "text-white"
+                  : "text-gray-900 dark:text-white"
+              )}
               aria-label="Toggle menu"
             >
               <svg
@@ -110,9 +121,11 @@ export function Header() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-white/80 dark:bg-gradient-to-r dark:from-[#1c2533] dark:via-[#1f3447] dark:to-[#3c5a87] mt-3 py-4 px-4 rounded-lg animate-fade-in backdrop-blur-sm shadow-lg">
+          <div className={cn(
+            "md:hidden mt-3 py-4 px-4 rounded-lg animate-fade-in backdrop-blur-sm shadow-lg",
+            "bg-white/90 dark:bg-gradient-to-r dark:from-[#1c2533] dark:via-[#1f3447] dark:to-[#3c5a87]"
+          )}>
             <nav className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <Link
@@ -123,13 +136,13 @@ export function Header() {
                     "text-sm font-medium transition-colors px-4 py-2 rounded-md",
                     location.pathname === link.path
                       ? "bg-webiify-teal/20 text-webiify-teal font-semibold"
-                      : "text-gray-700 dark:text-white/90 hover:bg-webiify-teal/10"
+                      : "text-gray-900 dark:text-white/90 hover:bg-webiify-teal/10"
                   )}
                 >
                   {link.name}
                 </Link>
               ))}
-              <Button variant="default" className="mt-2 bg-gradient-to-r from-webiify-teal to-webiify-green text-white">
+              <Button variant="default" className="mt-2 bg-gradient-to-r from-webiify-teal to-webiify-green text-white border border-gray-300">
                 Get Started
               </Button>
             </nav>
@@ -139,4 +152,3 @@ export function Header() {
     </header>
   );
 }
-
