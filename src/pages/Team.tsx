@@ -1,4 +1,3 @@
-
 import { AnimatedText } from "@/components/AnimatedText";
 
 export default function Team() {
@@ -7,7 +6,7 @@ export default function Team() {
       name: "John Smith",
       role: "CEO & Founder",
       bio: "John has over 15 years of experience in web development and has led numerous successful projects for clients across various industries.",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&q=80",
+      image: "/lovable-uploads/d9f826f2-14c6-454f-9f55-abeba1c0fc21.png",
       socialLinks: {
         twitter: "#",
         linkedin: "#",
@@ -19,7 +18,7 @@ export default function Team() {
       name: "Emily Johnson",
       role: "Lead Designer",
       bio: "Emily brings creative vision and user experience expertise to every project, ensuring our websites are not just functional but beautiful.",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&q=80",
+      image: "/lovable-uploads/6cd8bd09-2467-4b27-bf1c-878255c07ce0.png",
       socialLinks: {
         twitter: "#",
         linkedin: "#",
@@ -31,7 +30,7 @@ export default function Team() {
       name: "Michael Chen",
       role: "Full Stack Developer",
       bio: "Michael is a MERN stack expert with a passion for creating efficient, scalable web applications that deliver exceptional user experiences.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&q=80",
+      image: "/lovable-uploads/428238b7-9dd9-42f3-ac44-6b6e064a218a.png",
       socialLinks: {
         twitter: "#",
         linkedin: "#",
@@ -43,7 +42,7 @@ export default function Team() {
       name: "Sarah Rodriguez",
       role: "UX/UI Specialist",
       bio: "Sarah specializes in creating intuitive user interfaces and seamless user experiences that help our clients connect with their audience.",
-      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&q=80",
+      image: "/lovable-uploads/46190840-113c-432e-b334-90f2cda478fa.png",
       socialLinks: {
         twitter: "#",
         linkedin: "#",
@@ -133,11 +132,14 @@ export default function Team() {
                 className={`bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden card-hover animate-fade-in animate-delay-${member.delay}`}
               >
                 <div className="relative group">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-full h-64 object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                  />
+                  <div className="w-full h-64 flex items-center justify-center bg-gray-200 dark:bg-gray-700">
+                    <img 
+                      src={member.image} 
+                      alt={member.name} 
+                      className={`object-contain h-56 w-auto max-w-full max-h-full transition-transform duration-500 group-hover:scale-105`}
+                      style={{ background: "none" }}
+                    />
+                  </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                     <div className="p-4 w-full">
                       <div className="flex justify-center space-x-4">
