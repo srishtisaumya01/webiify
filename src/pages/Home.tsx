@@ -1,3 +1,4 @@
+
 import { AnimatedText } from "@/components/AnimatedText";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -21,7 +22,7 @@ export default function Home() {
                 element="h1" 
                 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6"
                 gradient="default"
-                animation="fade"
+                animation="typing"
               />
               
               <p className="text-foreground/80 text-lg md:text-xl mb-8 max-w-lg mx-auto lg:mx-0 animate-fade-in animate-delay-100">
@@ -148,3 +149,4 @@ export default function Home() {
     </>
   );
 }
+
