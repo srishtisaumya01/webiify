@@ -38,7 +38,8 @@ export function Header() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3",
         isScrolled
           ? "bg-gradient-to-r from-[#1c2533] via-[#1f3447] to-[#3c5a87] shadow-md py-2 backdrop-blur-sm"
-          : "bg-transparent"
+          : "bg-white/80 dark:bg-transparent backdrop-blur-md dark:backdrop-blur-sm", // Updated light mode background
+        isScrolled ? "text-white" : "text-gray-800 dark:text-white" // Added text color for light mode
       )}
     >
       <div className="container max-w-7xl mx-auto px-4 sm:px-6">
@@ -62,7 +63,7 @@ export function Header() {
                   "text-sm font-medium transition-colors hover:text-webiify-teal",
                   location.pathname === link.path
                     ? "text-webiify-teal font-semibold"
-                    : "text-white/90"
+                    : "text-gray-700 dark:text-white/90"
                 )}
               >
                 {link.name}
@@ -79,7 +80,7 @@ export function Header() {
             <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-white p-2"
+              className="text-gray-800 dark:text-white p-2"
               aria-label="Toggle menu"
             >
               <svg
@@ -111,7 +112,7 @@ export function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-gradient-to-r from-[#1c2533] via-[#1f3447] to-[#3c5a87] mt-3 py-4 px-4 rounded-lg animate-fade-in backdrop-blur-sm shadow-lg">
+          <div className="md:hidden bg-white/80 dark:bg-gradient-to-r dark:from-[#1c2533] dark:via-[#1f3447] dark:to-[#3c5a87] mt-3 py-4 px-4 rounded-lg animate-fade-in backdrop-blur-sm shadow-lg">
             <nav className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <Link
@@ -122,7 +123,7 @@ export function Header() {
                     "text-sm font-medium transition-colors px-4 py-2 rounded-md",
                     location.pathname === link.path
                       ? "bg-webiify-teal/20 text-webiify-teal font-semibold"
-                      : "text-white/90 hover:bg-webiify-teal/10"
+                      : "text-gray-700 dark:text-white/90 hover:bg-webiify-teal/10"
                   )}
                 >
                   {link.name}
@@ -138,3 +139,4 @@ export function Header() {
     </header>
   );
 }
+
