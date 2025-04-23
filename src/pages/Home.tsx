@@ -1,5 +1,4 @@
 import { AnimatedText } from "@/components/AnimatedText";
-import { TypeWordByWordText } from "@/components/TypeWordByWordText";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -17,10 +16,12 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
               <p className="text-webiify-purple animate-fade-in font-medium mb-4">Welcome to Webiify</p>
-              <TypeWordByWordText
-                text="Your Vision, Our Code"
+              <AnimatedText 
+                text="Your Vision, Our Code" 
+                element="h1" 
                 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6"
-                delay={0}
+                gradient="default"
+                animation="typing"
               />
               <p className="text-foreground/80 text-lg md:text-xl mb-8 max-w-lg mx-auto lg:mx-0 animate-fade-in animate-delay-100">
                 At Webiify, we don't just build websites—we craft powerful digital experiences tailored to your business.
