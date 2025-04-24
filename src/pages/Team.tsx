@@ -97,6 +97,18 @@ export default function Team() {
       },
       delay: 700
     },
+    {
+      name: "Keshav",
+      role: "CEO & Founder",
+      bio: "A visionary leader with extensive experience in web development, business strategy, and team management.",
+      image: "/lovable-uploads/358fa8b7-bb0c-4b24-a668-255a09f5bf06.png",
+      socialLinks: {
+        twitter: "#",
+        linkedin: "#",
+        github: "#"
+      },
+      delay: 800
+    }
   ];
 
   return (
