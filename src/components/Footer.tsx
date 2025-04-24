@@ -8,7 +8,7 @@ export function Footer() {
           <div className="col-span-1 md:col-span-1 animate-fade-in">
             <Link to="/" className="inline-block mb-6">
               <img
-                src="/lovable-uploads/43c192f7-f8ea-45c6-8bc6-bc09a3e28f7a.png"
+                src="/lovable-uploads/9ef88ca9-b4b8-40c5-a610-9ad48a3e6cbc.png"
                 alt="Webiify Logo"
                 className="h-12"
               />
