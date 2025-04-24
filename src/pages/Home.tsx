@@ -44,7 +44,7 @@ export default function Home() {
                 style={{
                   filter: "drop-shadow(0 0 20px rgba(156, 146, 172, 0.3))",
                   imageRendering: "crisp-edges",
-                  animation: "float 5s ease-in-out infinite",
+                  animation: "float 4s ease-in-out infinite",
                   transformOrigin: "center center",
                 }}
                 draggable="false"
