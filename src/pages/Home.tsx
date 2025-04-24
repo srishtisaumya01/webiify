@@ -40,9 +40,17 @@ export default function Home() {
               <img
                 src="/lovable-uploads/ee58312e-1aa5-4ff1-8078-eb7f09290c75.png"
                 alt="Webiify Logo"
-                className="w-full max-w-md mx-auto lg:max-w-full animate-pulse"
+                className="w-full max-w-md mx-auto lg:max-w-full animate-float select-none"
+                style={{
+                  filter: "drop-shadow(0 0 20px rgba(156, 146, 172, 0.3))",
+                  imageRendering: "crisp-edges",
+                }}
+                draggable="false"
               />
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-webiify-blue via-webiify-purple to-webiify-green rounded-3xl blur-3xl opacity-20 dark:opacity-10 -z-10"></div>
+              <div 
+                className="absolute -inset-0.5 bg-gradient-to-r from-webiify-blue via-webiify-purple to-webiify-green rounded-3xl blur-2xl opacity-30 dark:opacity-20 -z-10 animate-pulse-slow"
+                style={{ animation: 'pulse 3s infinite' }}
+              ></div>
             </div>
           </div>
         </div>
