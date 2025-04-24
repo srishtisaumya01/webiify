@@ -43,9 +43,7 @@ export default function Home() {
                 className="w-full max-w-md mx-auto lg:max-w-full select-none hover:scale-105 transition-transform duration-500"
                 style={{
                   filter: "drop-shadow(0 0 20px rgba(156, 146, 172, 0.3))",
-                  imageRendering: "crisp-edges",
-                  animation: "float 4s ease-in-out infinite",
-                  transformOrigin: "center center",
+                  imageRendering: "crisp-edges"
                 }}
                 draggable="false"
               />
