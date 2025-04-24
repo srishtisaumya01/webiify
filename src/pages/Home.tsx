@@ -40,16 +40,21 @@ export default function Home() {
               <img
                 src="/lovable-uploads/ee58312e-1aa5-4ff1-8078-eb7f09290c75.png"
                 alt="Webiify Logo"
-                className="w-full max-w-md mx-auto lg:max-w-full animate-float select-none"
+                className="w-full max-w-md mx-auto lg:max-w-full animate-float select-none hover:scale-105 transition-transform duration-500"
                 style={{
                   filter: "drop-shadow(0 0 20px rgba(156, 146, 172, 0.3))",
                   imageRendering: "crisp-edges",
+                  animation: "float 6s ease-in-out infinite, rotate 12s linear infinite",
                 }}
                 draggable="false"
               />
               <div 
-                className="absolute -inset-0.5 bg-gradient-to-r from-webiify-blue via-webiify-purple to-webiify-green rounded-3xl blur-2xl opacity-30 dark:opacity-20 -z-10 animate-pulse-slow"
-                style={{ animation: 'pulse 3s infinite' }}
+                className="absolute -inset-0.5 bg-gradient-to-r from-webiify-blue via-webiify-purple to-webiify-green rounded-3xl blur-2xl opacity-30 dark:opacity-20 -z-10"
+                style={{ 
+                  animation: 'pulse 3s infinite, glow 5s ease-in-out infinite alternate',
+                  background: 'linear-gradient(-45deg, #1E88E5, #9b87f5, #26A69A, #4CAF50)',
+                  backgroundSize: '400% 400%',
+                }}
               ></div>
             </div>
           </div>
