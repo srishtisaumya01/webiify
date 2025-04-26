@@ -1,7 +1,33 @@
-
 import { AnimatedText } from "@/components/AnimatedText";
 
 export default function About() {
+  const projects = [
+    {
+      title: "E-Commerce Platform",
+      description: "A full-featured online shopping platform with modern UI/UX",
+      image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc",
+      link: "https://example-ecommerce.com"
+    },
+    {
+      title: "Healthcare Portal",
+      description: "Patient management system for healthcare providers",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d",
+      link: "https://example-healthcare.com"
+    },
+    {
+      title: "Real Estate App",
+      description: "Property listing and management platform",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa",
+      link: "https://example-realestate.com"
+    },
+    {
+      title: "Learning Management",
+      description: "Online education platform for remote learning",
+      image: "https://images.unsplash.com/photo-1513258496099-48168024aec0",
+      link: "https://example-learning.com"
+    }
+  ];
+
   return (
     <>
       {/* Hero Section */}
@@ -61,6 +87,72 @@ export default function About() {
         </div>
       </section>
       
+      {/* Projects Section */}
+      <section className="py-16 md:py-24 bg-white dark:bg-gray-900">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <p className="text-webiify-blue font-medium mb-4 animate-fade-in">Our Portfolio</p>
+            <AnimatedText 
+              text="Glimpse of Our Work" 
+              element="h2" 
+              className="text-2xl md:text-4xl font-bold mb-6"
+              gradient="default"
+              animation="fade"
+            />
+            <p className="text-foreground/80 animate-fade-in animate-delay-100">
+              Take a look at some of our successful projects that showcase our expertise and innovation.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {projects.map((project, index) => (
+              <a 
+                key={index}
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block animate-fade-in animate-delay-100"
+              >
+                <div className="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden card-hover">
+                  <div className="relative aspect-video overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-webiify-blue transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-foreground/70">
+                      {project.description}
+                    </p>
+                    <div className="mt-4 flex items-center text-webiify-blue">
+                      <span className="text-sm font-medium">View Project</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M13 7l5 5m0 0l-5 5m5-5H6"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+      
       {/* Mission & Values Section */}
       <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4 sm:px-6">
@@ -95,7 +187,7 @@ export default function About() {
                 description: "We are committed to delivering work of the highest quality, with attention to detail and a focus on exceeding expectations.",
                 icon: (
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-webiify-purple mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 ),
                 delay: 100
