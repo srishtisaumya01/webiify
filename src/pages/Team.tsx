@@ -1,3 +1,4 @@
+
 import { AnimatedText } from "@/components/AnimatedText";
 
 export default function Team() {
@@ -30,7 +31,7 @@ export default function Team() {
       name: "Michael Chen",
       role: "Full Stack Developer",
       bio: "Michael is a MERN stack expert with a passion for creating efficient, scalable web applications that deliver exceptional user experiences.",
-      image: "/lovable-uploads/428238b7-9dd9-42f3-ac44-6b6e064a218a.png",
+      image: "/lovable-uploads/431b8abb-f096-4f7c-8d3e-d981dde7a3fb.png",
       socialLinks: {
         twitter: "#",
         linkedin: "#",
