@@ -1,4 +1,3 @@
-
 import { AnimatedText } from "@/components/AnimatedText";
 
 export default function Team() {
@@ -7,7 +6,7 @@ export default function Team() {
       name: "John Smith",
       role: "CEO & Founder",
       bio: "John has over 15 years of experience in web development and has led numerous successful projects for clients across various industries.",
-      image: "/lovable-uploads/d9f826f2-14c6-454f-9f55-abeba1c0fc21.png",
+      image: "/lovable-uploads/83de8205-51ec-474e-802a-835bb5f2f243.png",
       socialLinks: {
         twitter: "#",
         linkedin: "#",
@@ -19,7 +18,7 @@ export default function Team() {
       name: "Emily Johnson",
       role: "Lead Designer",
       bio: "Emily brings creative vision and user experience expertise to every project, ensuring our websites are not just functional but beautiful.",
-      image: "/lovable-uploads/6cd8bd09-2467-4b27-bf1c-878255c07ce0.png",
+      image: "/lovable-uploads/109fd978-09c4-4b40-9e3f-6756762ba151.png",
       socialLinks: {
         twitter: "#",
         linkedin: "#",
@@ -43,7 +42,7 @@ export default function Team() {
       name: "Sarah Rodriguez",
       role: "UX/UI Specialist",
       bio: "Sarah specializes in creating intuitive user interfaces and seamless user experiences that help our clients connect with their audience.",
-      image: "/lovable-uploads/46190840-113c-432e-b334-90f2cda478fa.png",
+      image: "/lovable-uploads/d978fe81-731b-45f5-b46b-c34174b76ef9.png",
       socialLinks: {
         twitter: "#",
         linkedin: "#",
@@ -149,8 +148,7 @@ export default function Team() {
                     <img 
                       src={member.image} 
                       alt={member.name} 
-                      className={`object-contain h-56 w-auto max-w-full max-h-full transition-transform duration-500 group-hover:scale-105`}
-                      style={{ background: "none" }}
+                      className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
