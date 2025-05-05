@@ -28,10 +28,10 @@ export default function Home() {
                 At Webiify, we don't just build websites—we craft powerful digital experiences tailored to your business.
               </p>
               <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 animate-fade-in animate-delay-200">
-                <Button variant="default" size="lg" className="bg-gradient-to-r from-webiify-blue to-webiify-purple text-white" asChild>
+                <Button variant="default" size="lg" className="bg-gradient-to-r from-webiify-blue to-webiify-purple text-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300" asChild>
                   <Link to="/contact">Get Started</Link>
                 </Button>
-                <Button variant="outline" size="lg" asChild>
+                <Button variant="outline" size="lg" className="hover:shadow-xl hover:-translate-y-1 transition-all duration-300" asChild>
                   <Link to="/services">Our Services</Link>
                 </Button>
               </div>
@@ -49,7 +49,7 @@ export default function Home() {
                 draggable="false"
               />
               <div 
-                className="absolute -inset-0.5 bg-gradient-to-r from-webiify-blue via-webiify-purple to-webiify-green rounded-3xl blur-2xl opacity-30 dark:opacity-20 -z-10 animate-pulse-slow"
+                className="absolute -inset-0.5 bg-gradient-to-r from-webiify-blue via-webiify-purple to-webiify-green rounded-3xl blur-2xl opacity-30 dark:opacity-20 -z-10 animate-pulse"
                 style={{ animation: 'pulse 3s infinite' }}
               ></div>
             </div>
@@ -67,7 +67,7 @@ export default function Home() {
               element="h2" 
               className="text-2xl md:text-4xl font-bold mb-6"
               gradient="default"
-              animation="fade"
+              animation="typing"
             />
             <p className="text-foreground/70 max-w-2xl mx-auto animate-fade-in animate-delay-100">
               We specialize in building fast, responsive, and scalable websites using the MERN stack.
@@ -85,7 +85,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                   </svg>
                 ),
-                delay: 0
+                delay: 0,
+                animation: "hover:scale-105 hover:rotate-2"
               },
               {
                 title: "MERN Stack Development",
@@ -95,7 +96,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                   </svg>
                 ),
-                delay: 100
+                delay: 100,
+                animation: "hover:scale-105 hover:-rotate-2"
               },
               {
                 title: "E-Commerce Solutions",
@@ -105,12 +107,13 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                   </svg>
                 ),
-                delay: 200
+                delay: 200,
+                animation: "hover:scale-105 hover:rotate-2"
               },
             ].map((feature, index) => (
               <div 
                 key={index} 
-                className={`bg-gray-50 dark:bg-gray-800 p-8 rounded-xl text-center transform transition-all hover:scale-105 hover:shadow-xl duration-300 animate-fade-in animate-delay-${feature.delay}`}
+                className={`bg-gray-50 dark:bg-gray-800 p-8 rounded-xl text-center transform transition-all hover:shadow-xl duration-500 animate-fade-in animate-delay-${feature.delay} ${feature.animation}`}
               >
                 <div className="flex justify-center">{feature.icon}</div>
                 <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
@@ -120,7 +123,7 @@ export default function Home() {
           </div>
           
           <div className="text-center mt-12 animate-fade-in animate-delay-300">
-            <Button variant="default" size="lg" className="bg-gradient-to-r from-webiify-blue to-webiify-purple text-white animate-pulse" asChild>
+            <Button variant="default" size="lg" className="bg-gradient-to-r from-webiify-blue to-webiify-purple text-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300" asChild>
               <Link to="/services">Explore All Services</Link>
             </Button>
           </div>
@@ -141,12 +144,12 @@ export default function Home() {
               element="h2" 
               className="text-white text-2xl md:text-4xl font-bold mb-6"
               gradient="none"
-              animation="fade"
+              animation="typing"
             />
             <p className="text-white/80 text-lg mb-8 animate-fade-in animate-delay-100">
               Let's turn your vision into reality. Contact us today to discuss your project and see how we can help you achieve your goals.
             </p>
-            <Button variant="default" size="lg" className="bg-gradient-to-r from-webiify-teal to-webiify-green text-white animate-bounce" asChild>
+            <Button variant="default" size="lg" className="bg-gradient-to-r from-webiify-teal to-webiify-green text-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300" asChild>
               <Link to="/contact">Get in Touch</Link>
             </Button>
           </div>

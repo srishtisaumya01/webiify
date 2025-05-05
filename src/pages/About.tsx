@@ -1,6 +1,7 @@
 
 import { AnimatedText } from "@/components/AnimatedText";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
+import { CountUpAnimation } from "@/components/CountUpAnimation";
 
 export default function About() {
   const projects = [
@@ -68,7 +69,7 @@ export default function About() {
               element="h1" 
               className="text-3xl md:text-5xl font-bold mb-6"
               gradient="default"
-              animation="fade"
+              animation="typing"
             />
             <p className="text-foreground/80 text-lg animate-fade-in animate-delay-100">
               Discover the story behind Webiify and our mission to create exceptional digital experiences.
@@ -81,26 +82,26 @@ export default function About() {
       <section className="py-16 md:py-24 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1 animate-fade-in">
+            <div className="order-2 lg:order-1 animate-slide-in-left">
               <p className="text-webiify-blue font-medium mb-4">Our Story</p>
               <h2 className="text-2xl md:text-4xl font-bold mb-6">
                 From a Small Idea to a <span className="text-gradient">Digital Powerhouse</span>
               </h2>
               <div className="space-y-4 text-foreground/80">
-                <p>
+                <p className="animate-fade-in">
                   Webiify was founded with a simple yet powerful belief: that every business deserves an exceptional digital presence, regardless of size or industry.
                 </p>
-                <p>
+                <p className="animate-fade-in animate-delay-100">
                   What started as a small team of passionate developers has grown into a full-service web development agency with a reputation for excellence, innovation, and reliability.
                 </p>
-                <p>
+                <p className="animate-fade-in animate-delay-200">
                   Our journey has been defined by our commitment to our clients' success. We understand that your website is more than just a digital asset—it's the face of your business in the online world.
                 </p>
               </div>
             </div>
             
-            <div className="order-1 lg:order-2 relative animate-fade-in animate-delay-100">
-              <div className="relative rounded-2xl overflow-hidden shadow-xl">
+            <div className="order-1 lg:order-2 relative animate-slide-in-right">
+              <div className="relative rounded-2xl overflow-hidden shadow-xl animate-float">
                 <img 
                   src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" 
                   alt="Our Team Working" 
@@ -123,7 +124,7 @@ export default function About() {
               element="h2" 
               className="text-2xl md:text-4xl font-bold mb-6"
               gradient="default"
-              animation="fade"
+              animation="typing"
             />
             <p className="text-foreground/80 animate-fade-in animate-delay-100">
               Take a look at some of our successful projects that showcase our expertise and innovation.
@@ -147,14 +148,14 @@ export default function About() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group block animate-fade-in"
+                      className="group block animate-fade-in animate-delay-300"
                     >
-                      <div className="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden card-hover h-full">
+                      <div className="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden card-hover-effect h-full">
                         <div className="relative aspect-video overflow-hidden">
                           <img 
                             src={project.image} 
                             alt={project.title}
-                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                           />
                         </div>
                         <div className="p-6">
@@ -168,7 +169,7 @@ export default function About() {
                             <span className="text-sm font-medium">View Project</span>
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1"
+                              className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-2 duration-300"
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
@@ -204,7 +205,7 @@ export default function About() {
               element="h2" 
               className="text-2xl md:text-4xl font-bold mb-6"
               gradient="default"
-              animation="fade"
+              animation="typing"
             />
             <p className="text-foreground/80 animate-fade-in animate-delay-100">
               At the heart of Webiify are core values that guide every project we undertake and every line of code we write.
@@ -217,7 +218,7 @@ export default function About() {
                 title: "Innovation",
                 description: "We stay at the forefront of web technology, constantly exploring new tools and techniques to deliver cutting-edge solutions.",
                 icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-webiify-blue mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-webiify-blue mb-4 animate-spin animate-slower" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
                 ),
@@ -227,7 +228,7 @@ export default function About() {
                 title: "Excellence",
                 description: "We are committed to delivering work of the highest quality, with attention to detail and a focus on exceeding expectations.",
                 icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-webiify-purple mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-webiify-purple mb-4 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 ),
@@ -237,7 +238,7 @@ export default function About() {
                 title: "Client Partnership",
                 description: "We believe in true collaboration, working alongside our clients to understand their needs and achieve their goals.",
                 icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-webiify-green mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-webiify-green mb-4 animate-float" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                   </svg>
                 ),
@@ -247,7 +248,7 @@ export default function About() {
                 title: "Reliability",
                 description: "We deliver on our promises, meeting deadlines and staying within budget while maintaining the highest standards.",
                 icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-webiify-blue mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-webiify-blue mb-4 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 ),
@@ -257,7 +258,7 @@ export default function About() {
                 title: "Integrity",
                 description: "We operate with transparency and honesty in all our interactions, building trust with our clients and partners.",
                 icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-webiify-purple mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-webiify-purple mb-4 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 ),
@@ -267,7 +268,7 @@ export default function About() {
                 title: "Continuous Growth",
                 description: "We are committed to learning and improvement, constantly expanding our skills and knowledge base.",
                 icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-webiify-green mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-webiify-green mb-4 animate-float" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                   </svg>
                 ),
@@ -276,7 +277,7 @@ export default function About() {
             ].map((value, index) => (
               <div 
                 key={index} 
-                className={`bg-white dark:bg-gray-900 p-8 rounded-xl text-center card-hover animate-fade-in animate-delay-${value.delay}`}
+                className={`bg-white dark:bg-gray-900 p-8 rounded-xl text-center card-hover-effect animate-fade-in animate-delay-${value.delay}`}
               >
                 <div className="flex justify-center">{value.icon}</div>
                 <h3 className="text-xl font-bold mb-3">{value.title}</h3>
@@ -292,13 +293,20 @@ export default function About() {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: "100+", label: "Clients" },
-              { number: "250+", label: "Projects" },
-              { number: "5+", label: "Years" },
-              { number: "15", label: "Team Members" },
+              { number: 100, label: "Clients", suffix: "+" },
+              { number: 250, label: "Projects", suffix: "+" },
+              { number: 5, label: "Years", suffix: "+" },
+              { number: 15, label: "Team Members", suffix: "" },
             ].map((stat, index) => (
               <div key={index} className="text-center animate-fade-in animate-delay-100">
-                <p className="text-3xl md:text-5xl font-bold text-gradient mb-2">{stat.number}</p>
+                <p className="text-3xl md:text-5xl font-bold text-gradient mb-2">
+                  <CountUpAnimation
+                    end={stat.number}
+                    suffix={stat.suffix}
+                    duration={2000}
+                    className="font-bold"
+                  />
+                </p>
                 <p className="text-foreground/70">{stat.label}</p>
               </div>
             ))}

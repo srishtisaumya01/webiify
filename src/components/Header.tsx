@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ThemeToggle } from "./ThemeToggle";
@@ -49,21 +50,23 @@ export function Header() {
             <img 
               src="/lovable-uploads/b9b7d557-456c-45f5-aa1c-ffd0b29975bd.png" 
               alt="Webiify Logo" 
-              className="h-10 sm:h-12"
+              className="h-10 sm:h-12 animate-float"
               style={{ filter: isScrolled ? "drop-shadow(0 0 10px rgba(50,150,255,0.9))" : "none" }}
+              draggable="false"
             />
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
+            {navLinks.map((link, index) => (
               <Link
                 key={link.path}
                 to={link.path}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-webiify-teal",
+                  "text-sm font-medium transition-all duration-300 hover:text-webiify-teal relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-0.5 after:bg-webiify-teal after:scale-x-0 after:origin-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-left",
                   location.pathname === link.path
                     ? "text-webiify-teal font-semibold"
-                    : "text-gray-900 dark:text-white/90"
+                    : "text-gray-900 dark:text-white/90",
+                  `animate-fade-in animate-delay-${index * 100}`
                 )}
               >
                 {link.name}
@@ -74,7 +77,7 @@ export function Header() {
               variant="default"
               size="sm"
               className={cn(
-                "ml-4 bg-gradient-to-r from-webiify-teal to-webiify-green text-white",
+                "ml-4 bg-gradient-to-r from-webiify-teal to-webiify-green text-white hover:shadow-lg hover:-translate-y-1 transition-all duration-300 animate-fade-in animate-delay-700",
                 !isScrolled && "border border-gray-300"
               )}
             >
@@ -87,7 +90,7 @@ export function Header() {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={cn(
-                "p-2",
+                "p-2 transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-md",
                 isScrolled
                   ? "text-white"
                   : "text-gray-900 dark:text-white"
@@ -127,22 +130,26 @@ export function Header() {
             "bg-white/90 dark:bg-gradient-to-r dark:from-[#1c2533] dark:via-[#1f3447] dark:to-[#3c5a87]"
           )}>
             <nav className="flex flex-col space-y-4">
-              {navLinks.map((link) => (
+              {navLinks.map((link, index) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    "text-sm font-medium transition-colors px-4 py-2 rounded-md",
+                    "text-sm font-medium transition-all duration-300 px-4 py-2 rounded-md",
                     location.pathname === link.path
                       ? "bg-webiify-teal/20 text-webiify-teal font-semibold"
-                      : "text-gray-900 dark:text-white/90 hover:bg-webiify-teal/10"
+                      : "text-gray-900 dark:text-white/90 hover:bg-webiify-teal/10",
+                    `animate-fade-in animate-delay-${index * 100}`
                   )}
                 >
                   {link.name}
                 </Link>
               ))}
-              <Button variant="default" className="mt-2 bg-gradient-to-r from-webiify-teal to-webiify-green text-white border border-gray-300">
+              <Button 
+                variant="default" 
+                className="mt-2 bg-gradient-to-r from-webiify-teal to-webiify-green text-white border border-gray-300 animate-pulse"
+              >
                 Get Started
               </Button>
             </nav>

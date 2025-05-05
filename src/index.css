@@ -158,6 +158,11 @@
   to { transform: rotate(360deg); }
 }
 
+@keyframes countUp {
+  from { content: "0"; }
+  to { content: attr(data-target); }
+}
+
 .animate-fade-in {
   animation: fadeIn 0.8s ease-out forwards;
 }
@@ -190,6 +195,18 @@
   animation-duration: 8s;
 }
 
+.btn-hover-effect {
+  @apply transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px];
+}
+
+.card-hover-effect {
+  @apply transition-all duration-300 hover:shadow-xl hover:translate-y-[-5px];
+}
+
+.icon-hover-effect {
+  @apply transition-all duration-300 hover:text-webiify-blue hover:scale-110;
+}
+
 .animate-bounce {
   animation: bounce 2s infinite;
 }
@@ -201,4 +218,3 @@
 .animate-delay-500 { animation-delay: 500ms; }
 .animate-delay-700 { animation-delay: 700ms; }
 .animate-delay-1000 { animation-delay: 1000ms; }
-
