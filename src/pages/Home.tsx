@@ -1,3 +1,4 @@
+
 import { AnimatedText } from "@/components/AnimatedText";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -80,7 +81,7 @@ export default function Home() {
                 title: "Responsive Web Design",
                 description: "Mobile-friendly websites that look great on all devices and screen sizes.",
                 icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-webiify-purple mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-webiify-purple mb-4 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                   </svg>
                 ),
@@ -90,7 +91,7 @@ export default function Home() {
                 title: "MERN Stack Development",
                 description: "Full-stack JavaScript solutions using MongoDB, Express, React, and Node.js.",
                 icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-webiify-blue mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-webiify-blue mb-4 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                   </svg>
                 ),
@@ -100,7 +101,7 @@ export default function Home() {
                 title: "E-Commerce Solutions",
                 description: "Custom online stores with secure payment gateways and inventory management.",
                 icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-webiify-green mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-webiify-green mb-4 animate-spin animate-slower" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                   </svg>
                 ),
@@ -109,7 +110,7 @@ export default function Home() {
             ].map((feature, index) => (
               <div 
                 key={index} 
-                className={`bg-gray-50 dark:bg-gray-800 p-8 rounded-xl text-center card-hover animate-fade-in animate-delay-${feature.delay}`}
+                className={`bg-gray-50 dark:bg-gray-800 p-8 rounded-xl text-center transform transition-all hover:scale-105 hover:shadow-xl duration-300 animate-fade-in animate-delay-${feature.delay}`}
               >
                 <div className="flex justify-center">{feature.icon}</div>
                 <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
@@ -119,7 +120,7 @@ export default function Home() {
           </div>
           
           <div className="text-center mt-12 animate-fade-in animate-delay-300">
-            <Button variant="default" size="lg" className="bg-gradient-to-r from-webiify-blue to-webiify-purple text-white" asChild>
+            <Button variant="default" size="lg" className="bg-gradient-to-r from-webiify-blue to-webiify-purple text-white animate-pulse" asChild>
               <Link to="/services">Explore All Services</Link>
             </Button>
           </div>
@@ -145,7 +146,7 @@ export default function Home() {
             <p className="text-white/80 text-lg mb-8 animate-fade-in animate-delay-100">
               Let's turn your vision into reality. Contact us today to discuss your project and see how we can help you achieve your goals.
             </p>
-            <Button variant="default" size="lg" className="bg-gradient-to-r from-webiify-teal to-webiify-green text-white animate-fade-in animate-delay-200" asChild>
+            <Button variant="default" size="lg" className="bg-gradient-to-r from-webiify-teal to-webiify-green text-white animate-bounce" asChild>
               <Link to="/contact">Get in Touch</Link>
             </Button>
           </div>

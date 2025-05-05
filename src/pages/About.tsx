@@ -1,4 +1,6 @@
+
 import { AnimatedText } from "@/components/AnimatedText";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 
 export default function About() {
   const projects = [
@@ -25,6 +27,30 @@ export default function About() {
       description: "Online education platform for remote learning",
       image: "https://images.unsplash.com/photo-1513258496099-48168024aec0",
       link: "https://example-learning.com"
+    },
+    {
+      title: "Finance Dashboard",
+      description: "Interactive financial analytics and reporting tool",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+      link: "https://example-finance.com"
+    },
+    {
+      title: "Travel Booking",
+      description: "Comprehensive travel planning and booking platform",
+      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+      link: "https://example-travel.com"
+    },
+    {
+      title: "Food Delivery",
+      description: "Restaurant marketplace and food delivery service",
+      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38",
+      link: "https://example-food.com"
+    },
+    {
+      title: "Fitness Tracker",
+      description: "Personal health and workout monitoring application",
+      image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438",
+      link: "https://example-fitness.com"
     }
   ];
 
@@ -87,7 +113,7 @@ export default function About() {
         </div>
       </section>
       
-      {/* Projects Section */}
+      {/* Projects Section with Carousel */}
       <section className="py-16 md:py-24 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -104,51 +130,66 @@ export default function About() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {projects.map((project, index) => (
-              <a 
-                key={index}
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block animate-fade-in animate-delay-100"
-              >
-                <div className="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden card-hover">
-                  <div className="relative aspect-video overflow-hidden">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-webiify-blue transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-foreground/70">
-                      {project.description}
-                    </p>
-                    <div className="mt-4 flex items-center text-webiify-blue">
-                      <span className="text-sm font-medium">View Project</span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M13 7l5 5m0 0l-5 5m5-5H6"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            ))}
+          <div className="relative">
+            <Carousel 
+              className="w-full" 
+              opts={{ 
+                align: "start",
+                loop: true
+              }}
+              autoplay={true}
+              autoplayInterval={4000}
+            >
+              <CarouselContent>
+                {projects.map((project, index) => (
+                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                    <a 
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group block animate-fade-in"
+                    >
+                      <div className="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden card-hover h-full">
+                        <div className="relative aspect-video overflow-hidden">
+                          <img 
+                            src={project.image} 
+                            alt={project.title}
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                          />
+                        </div>
+                        <div className="p-6">
+                          <h3 className="text-xl font-bold mb-2 group-hover:text-webiify-blue transition-colors">
+                            {project.title}
+                          </h3>
+                          <p className="text-foreground/70">
+                            {project.description}
+                          </p>
+                          <div className="mt-4 flex items-center text-webiify-blue">
+                            <span className="text-sm font-medium">View Project</span>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M13 7l5 5m0 0l-5 5m5-5H6"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="bg-white/80 backdrop-blur-sm hover:bg-white" />
+              <CarouselNext className="bg-white/80 backdrop-blur-sm hover:bg-white" />
+            </Carousel>
           </div>
         </div>
       </section>
